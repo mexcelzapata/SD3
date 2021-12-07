@@ -1,0 +1,52 @@
+version: '2'
+services:
+  PGSQL: 
+    image: 'bitnami/postgresql:9.6.24'
+    restart: always
+    container_name: PGSQL
+    volumes:
+      - ./query.sql:/docker-entrypoint-initdb.d/query.sql
+    environment: 
+        POSTGRESQL_REPLICATION_MODE: master 
+        POSTGRESQL_USERNAME: postgres
+        POSTGRESQL_PASSWORD: postgres
+        POSTGRESQL_DATABASE: postgres 
+        POSTGRESQL_REPLICATION_USER: postgres
+        POSTGRESQL_REPLICATION_PASSWORD: postgres
+    ports:
+      - '5432'
+  PGSQL-slave:
+    image: 'bitnami/postgresql:9.6.24'
+    restart: always
+    container_name: PGSQL_slave
+    environment:
+        POSTGRESQL_REPLICATION_MODE: slave 
+        POSTGRESQL_PASSWORD: postgres
+        POSTGRESQL_MASTER_HOST: PGSQL
+        POSTGRESQL_MASTER_PORT_NUMBER: 5432 
+        POSTGRESQL_REPLICATION_USER: postgres
+        POSTGRESQL_REPLICATION_PASSWORD: postgres
+    depends_on:
+      - PGSQL
+    ports:
+      - '5432'
+  nginx_:
+    image: nginx
+    restart: always
+    depends_on:
+      - app
+    volumes:
+      - ./app.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 3000:80
+  app:
+    deploy:
+      replicas: 3
+    build: ./app
+    ports:
+      - "4000"
+    depends_on:
+      - PGSQL
+    restart: on-failure
+
+    

@@ -29,7 +29,7 @@ Para validar aquella insercción dentro de la base de datos, se obtiene como Out
 
 ### localhost:4000/GetProduct/*Nombre
 
-Para solicitar a la base de datos los datos de los productos que contienen caracteres determinados, solo basta con introducir el valor de esos caracteres a buscar en la ruta `localhost:4000/GetProduct/*nombre_producto`. Obteniendo como Output, un listado con los diferentes productos en el sistema de base de datos que coinciden.
+Para solicitar a la base de datos los datos de los productos que contienen caracteres determinados, solo basta con introducir el valor de esos caracteres a buscar en la ruta con el metodo `GET` en `localhost:4000/GetProduct/*nombre_producto`. Obteniendo como Output, un listado con los diferentes productos en el sistema de base de datos que coinciden.
 
 Ejemplo: localhost:4000/GetProduct/soldadora
 

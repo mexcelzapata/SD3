@@ -13,7 +13,7 @@ Para poder comenzar, es necesario instalar el entorno con los diferentes contene
 ## Rutas
 Una vez levantado los diferentes contenedores, se procede a mencionar las diferentes rutas que se tienen que utilizar para crear un producto como para ver los productos que nosotros requerimios.
 
-# localhost:4000/AddProduct
+### localhost:4000/AddProduct
 Para Poder agregar un producto, solo es necesario dirigirnos a la ruta `localhost:4000/AddProduct` e introducir a traves de una herramienta para realizar pruebas a API como lo es `INSOMNIA`, introducimos por metodo `POST` el producto con la siguente estructura de `JSON`:
 
 ```json

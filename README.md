@@ -24,6 +24,41 @@ Para Poder agregar un producto, solo es necesario dirigirnos a la ruta `localhos
 
 ```
 
+Para validar aquella insercción dentro de la base de datos, se obtiene como Output: `Se inserto con exito`
+
+
+### localhost:4000/GetProduct/*Nombre
+
+Para solicitar a la base de datos los datos de los productos que contienen caracteres determinados, solo basta con introducir el valor de esos caracteres a buscar en la ruta `localhost:4000/GetProduct/*nombre_producto`. Obteniendo como Output, un listado con los diferentes productos en el sistema de base de datos que coinciden.
+
+Ejemplo: localhost:4000/GetProduct/soldadora
+
+```JSON
+[
+ {
+  "id":43,
+  "nombre": "soldadora electrica",
+  "precio": 1234
+ },
+ {
+  "id":45,
+  "nombre": "soldadora diesel",
+  "precio": 4321
+ }
+
+]
+
+
+```
+
+
+
+
+
+
+
+
+
 
 
 

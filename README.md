@@ -4,7 +4,7 @@ Amezon una empresa de e-commerce, está teniendo problemas de escalabilidad en s
 Para ello, en este repositorio, se tiene lo utilizado para dar respuesta a la problematica planteada. 
 
 ## Levantamiento de Docker
-Para poder comenzar, es necesario instalar el entorno con los diferentes contenedores y sus imagenes correspondientes. Donde tenemos que para el balanceador de carga se utilizó `NGINX` y como base de datos se utilizó `POSTGRESQL`. Para ejecutar el documento `docker-compose.yml`
+Para poder comenzar, es necesario instalar el entorno con los diferentes contenedores y sus imagenes correspondientes. Donde tenemos que para el balanceador de carga se utilizó `NGINX`, levantado en el puerto por default `80` y como base de datos se utilizó `POSTGRESQL` levantado en el puerto por Default `5432`. Para ejecutar el documento `docker-compose.yml`
 
 ```
  docker-compose up -d --build
